@@ -1,6 +1,6 @@
 import pandas
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split, KFold, cross_val_score
+from sklearn.model_selection import train_test_split
 from sklearn import linear_model
 
 # считываем данные из файла
@@ -23,10 +23,4 @@ y_pred = regr.predict(x_test.values.reshape(-1, 1))
 plt.plot(x_test, y_pred, color='blue', linewidth=2)
 plt.xlabel("x")
 plt.ylabel("y")
-
-
-#kf = KFold(n_splits=4, random_state=42, shuffle=True)
-#quality = cross_val_score(regr, x.values.reshape(-1, 1), y, cv = kf, scoring='neg_mean_squared_error')
-#print(quality.mean())
-
 plt.show()
